@@ -1,0 +1,5 @@
+# Place in /lib/dhcpcd/dhcpcd-hooks for automatic authentication when IP is 
+# leased. This will authenticate anytime a WLAN is associated with.
+if [ "$reason" = "BOUND" ] || [ "$reason" = "REBIND" ] || [ "$reason" = "REBOOT" ] || [ "$reason" = "RENEW" ]; then
+    webauth
+fi

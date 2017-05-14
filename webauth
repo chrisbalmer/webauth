@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""Tests the WebAuth class with a test account and password.
+"""
+import json
+import webauth
+
+with open('webauth.json') as webauth_file:
+    authorization = json.load(webauth_file)
+WEBAUTH = webauth.WebAuth(**authorization)
+WEBAUTH.authorized()
+WEBAUTH.complete_webauth()
