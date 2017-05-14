@@ -4,7 +4,7 @@
 import json
 import webauth
 
-with open('webauth.json') as webauth_file:
+with open('/etc/webauth/webauth.json') as webauth_file:
     authorization = json.load(webauth_file)
 WEBAUTH = webauth.WebAuth(**authorization)
 WEBAUTH.authorized()
